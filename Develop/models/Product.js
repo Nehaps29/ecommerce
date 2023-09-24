@@ -38,6 +38,14 @@ Product.init(
           msg: 'stock must be a number'
          }     
       }
+    },
+    category_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'category',
+        key: 'id',
+        unique: true
+      }
     }
   },
   {
