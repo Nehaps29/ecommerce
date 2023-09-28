@@ -18,11 +18,13 @@ License.belongsTo(Driver, {
   foreignKey: 'driver_id',
 }); */
 Product.belongsTo(Category,{
-  foreignKey: 'customer_products'
+  foreignKey: 'category_id',
+  as: 'customer_products'
 });
 // Categories have many Products
 Category.hasMany(Product,{
-  foreignKey: 'product_customers'
+  foreignKey: 'category_id',
+  as: 'product_customers'
 });
 
 // Products belongToMany Tags (through ProductTag)
@@ -31,6 +33,7 @@ Product.belongsToMany(Tag, {
   // Define the third table needed to store the foreign keys
   through: {
     model: ProductTag,
+    foreignKey: 'product_id',
     unique: false
   },
   // Define an alias for when data is retrieved
@@ -43,6 +46,7 @@ Tag.belongsToMany(Product, {
   // Define the third table needed to store the foreign keys
   through: {
     model: ProductTag,
+    foreignKey: 'tag_id',
     unique: false
   },
   // Define an alias for when data is retrieved
