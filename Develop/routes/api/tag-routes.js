@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
   try {
     const tagData = await Tag.findByPk(req.params.id, {
       // JOIN with travellers, using the Trip through table
-      include: [{ model: Product, through: ProductTag, as: 'tag_product' }]
+      include: [{ model: Product, through: ProductTag }]
     });
 
     if (!tagData) {
@@ -31,7 +31,7 @@ router.get('/:id', async (req, res) => {
   try {
     const tagData =  await Tag.findByPk(req.params.id, {
       // JOIN with travellers, using the Trip through table
-      include: [{ model: Product, through: ProductTag, as: 'tag_product' }]
+      include: [{ model: Product, through: ProductTag }]
     });
 
     if (!tagData) {
