@@ -44,6 +44,7 @@ router.post('/', async (req, res) => {
   // create a new tag
   try {
     const tagData = await Tag.create(req.body);
+    console.log(tagData);
     res.status(200).json(tagData);
   } catch (err) {
     res.status(400).json(err);
@@ -54,10 +55,10 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
   // update a tag's name by its `id` value
   try {
-    const { id } = req.params;
-    const { newData } = req.body;
-    const updatedTag = await Category.update(newData, {
-      where: {id: id}
+    const updatedTag = await Category.update(req.body, {
+      where: {
+        id: req.params.id
+      }
     });
     if ( updatedTag [0] === 1){
       res.status(200).json({message: 'Tag updated successfully'})
@@ -68,6 +69,7 @@ router.put('/:id', async (req, res) => {
   }
   catch (err){
     res.status(400).json(err);
+    console.log(updatedTag);
   }
 });
 
