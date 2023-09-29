@@ -6,9 +6,9 @@ My motivation behind this project was to make it easy to enter records,update,de
   ## Github Repo link: 
   https://github.com/Nehaps29/ecommerce
 
-  ## Short Video Link showing how it is generated: 
+  ## Short Video Link:
 
-  
+  https://drive.google.com/file/d/1Sry1rgGyVlZYDb63psPNT1AfG48k8lnk/view
 
   ## Picture of Tag details via insomnia
   
